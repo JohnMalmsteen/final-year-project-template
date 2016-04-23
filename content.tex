@@ -2,145 +2,150 @@
 
 \chapter*{About this project}
 \paragraph{Abstract}
-A brief description of what the project is, in about two-hundred and fifty words.
+
+This project was contracted to us through Enterprise Ireland1[1] from a company called RoamPA. We have previously worked on a project for RoamPA in the past. RoamPA was building a web application aimed at business users and required two modules to be developed for them externally. One of the modules consists of generating reports for a user based on streamlined, friendly queries for user in a management position. This system would let the user generate queries about users or groups of users relating to their business activities. The other module consists of a reviews system which allows users to generate reviews about businesses,faculties, points of interest etc. The review system requires the ability to create, view, like and dislike reviews, all of which is presented to the user through a map. Both of these modules had to be created from scratch and had to integrate into their existing server environment whilst using their database technologies. There was a lot of requirements, frameworks and dependencies. This project was a great experience and because it required knowledge about technologies we had never used before so we were delighted to take this challenge.
 
 \paragraph{Authors}
-Explain here who the authors are.
 
+The authors of this project are Andrew Sweeney and John Frizzell. We are both graduates of the BSc in Computing in Software Development which was the preceding course to the current honours degree. We both have a great interest in programming and technology. We are constantly seeking ways to improve our knowledge and skills.
 
 
 \chapter{Introduction}
-The introduction should be about three to five pages long.
-Make sure you use references~\cite{einstein}
+
+RoamPA Ltd is a start-up company founded by Una McNeill. They are developing a web application which is used to streamline the process of moving employees globally for work and business purposes. They wish to provide a much improved employee experience, significant cost savings to clients and greater return on investments with assignments and business travel.
+
+We had previously worked for her on another project. The previous project had brought us outside the scope of our college work and proved to be a great learning experience. A year later We were asked again if they would develop two separate modules for this web application.
+
+This time the focus of the project was completely different. This new project involved technologies and methodologies new to us. The focus was to create a reviews system where a user can view, create and rate reviews. The reviews would be then displayed an some form of map.\newline
+
+\textbf{JOHNS BIT ABOUT REPORT GENERATOR}\newline
+
+All of these technologies were outside of the scope of our college work and required a lot of research, experimentation and tutorials to complete the solution. Aside from programming in Java through our coursework and having some experience with MySQL databases we hadn't any previous experience with these technologies. Our course work covered some basic HTML and CSS in first year, so all of the skills to develop this application were learned as we went and through other experiences with web technologies.
+
 
 \chapter{Context}
+
+\section{Why we chose this project}
+
+Throughout our college course we have developed in many different languages. Java, C\#, C and Python to name a few. We have not had the chance to really to dig deeply into web development. Web languages like PHP and Javascript were not part of our syllabus. Our sister course "Computing in Digital Media" does some of the design elements of web development but not much of the back-end stuff that we've both liked. Throughout our course we had a few semesters that had Database modules involving MYSQL. We heard the current project involved full blown MVC, Servlets, ORM and JSP pages. We also learned that the main language required for the project was Java which is one of the core languages for our college course. This project gave us a whole new area to experiment with and learn. Due to the challenge and interest we accepted the contract for this project.
+
+\section{Challenges we had to face}    
+
+Straight from the beginning, the challenge was to understand all of the frameworks and how all of the different parts of the environment work together. This meant completely understanding concepts like ORM and how they are applied through the framework Hibernate. Other concepts included learning how MVC is applied through SpringMVC with routes etc. There was a lot to research, a lot of frameworks to read up on. There was also numerous dependencies to figure out and all of this had to be. The amount of research, tutorials and understanding to be put into the project was the challenge. 
+
+
+\section{Objectives}
+
 \begin{itemize}
-\item Provide a context for your project.
-\item Set out the objectives of the project
-\item Briefly list each chapter / section and provide a 1-2 line description of what each section contains.
-\item List the resource URL (GitHub address) for the project and provide a brief list of the main elements at the URL.
+\item{Follow the specifications provided to make integration easier}
+\item{Research the frameworks and environment}
+\item{Create a reports module}
+\item{Create a reviews module}
 \end{itemize}
 
-\section{Filler}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mi enim, interdum ut elit lobortis, bibendum tempus diam. Etiam turpis ex, viverra tristique finibus nec, feugiat at metus. Curabitur tempus gravida interdum. Donec ac felis a lorem scelerisque elementum. Vestibulum sit amet gravida tortor, a iaculis orci. Nam a molestie augue. Curabitur malesuada odio at mattis molestie. In hac habitasse platea dictumst. Donec eu lectus eget risus hendrerit euismod nec at orci. Praesent porttitor aliquam diam, eu vestibulum nisl sollicitudin vel. Nullam sed egestas mi.
+\section{Specifications}
 
-Quisque vel erat a justo volutpat auctor a nec odio. Sed rhoncus augue sit amet nisl tincidunt, vitae cursus tellus efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque et auctor dui. Fusce ornare odio ipsum, et laoreet mi molestie sed. Cras at massa sit amet ipsum gravida aliquam. Nulla suscipit porta imperdiet. Fusce eros neque, bibendum sit amet consequat non, pulvinar quis ipsum.
+We were creating a two modules for RoamPA. Both modules had to be integrated onto RoamPA's existing Apache Tomcat server. The Frameworks required of us were to use Hibernate ORM and SpringMVC. The existing database RoamPA uses is MySQL. All of the code handed over to RoamPA must be integrable on their server.
 
-\subsection{More filler}
-Donec fermentum sapien ac rhoncus egestas. Nullam condimentum condimentum eros sit amet semper. Nam maximus condimentum ligula. Praesent faucibus in nisi vitae tempus. Sed pellentesque eleifend ante, ac malesuada nibh dapibus nec. Phasellus nisi erat, pulvinar vel sagittis sed, auctor et magna. Quisque finibus augue elit, consequat dignissim purus mollis nec. Duis ultricies euismod tortor, nec sodales libero pellentesque et. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+The first module involved creating a reviews system. The reviews system should allow the customer to look up an area using a search box and using filters then find locations for buildings like hospitals,restaurants and numerous other points of interest. The customer could then click on the POI and create a review for a business. They can also rate a current review that exists on there and like or dislike it.
 
-Donec id interdum felis, in semper lacus. Mauris volutpat justo at ex dignissim, sit amet viverra massa pellentesque. Suspendisse potenti. Praesent sit amet ipsum non nibh eleifend pretium. In pretium sapien quam, nec pretium leo consequat nec. Pellentesque non dui lacus. Aenean sed massa lacinia, vehicula ante et, sagittis leo. Sed nec nisl ac tellus scelerisque consequat. Ut arcu metus, eleifend rhoncus sapien sed, consequat tincidunt erat. Cras ut vulputate ipsum.
+The second module \newline
 
-Curabitur et efficitur augue. Proin condimentum ultrices facilisis. Mauris nisi ante, ultrices sed libero eget, ultrices malesuada augue. Morbi libero magna, faucibus in nunc vitae, ultricies efficitur nisl. Donec eleifend elementum massa, sed eleifend velit aliquet gravida. In ac mattis est, quis sodales neque. Etiam finibus quis tortor eu consequat. Nullam condimentum est eget pulvinar ultricies. Suspendisse ut maximus quam, sed rhoncus urna.
-
-\section{Filler}
-Phasellus eu tellus tristique nulla porttitor convallis. Vestibulum ac est eget diam mollis consectetur. Donec egestas facilisis consectetur. Donec magna orci, dignissim vel sem quis, efficitur condimentum felis. Donec mollis leo a nulla imperdiet, in bibendum augue varius. Quisque molestie massa enim, vitae ornare lacus imperdiet non. Donec et ipsum id ante imperdiet mollis. Nullam est est, euismod sit amet cursus a, feugiat a lectus. Integer sed mauris dolor.
-
-Mauris blandit neque tortor, consequat aliquam nisi aliquam vitae. Integer urna dolor, fermentum ut iaculis ut, semper eu lacus. Curabitur mollis at lectus at venenatis. Donec fringilla diam ac risus imperdiet suscipit. Aliquam convallis quam vitae turpis interdum, quis pharetra lacus tincidunt. Nam dictum maximus lectus, vitae faucibus ante. Morbi accumsan velit nec massa tincidunt porttitor. Nullam gravida at justo id viverra. Mauris ante nulla, eleifend vitae sem vitae, porttitor lobortis eros.
-
-Cras tincidunt elit id nisi aliquam, id convallis ex bibendum. Sed vel odio fringilla, congue leo quis, aliquam metus. Nunc tempor vehicula lorem eu ultrices. Curabitur at libero luctus, gravida lectus sed, viverra mi. Cras ultrices aliquet elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed metus ante, suscipit sit amet finibus ut, gravida et orci. Nunc est odio, luctus quis diam in, porta molestie magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris pulvinar lacus odio, luctus tincidunt magna auctor ut. Ut fermentum nisl rhoncus, tempus nulla eget, faucibus tortor. Suspendisse eu ex nec nunc mollis pulvinar. Nunc luctus tempus tellus eleifend porta. Nulla scelerisque porttitor turpis porttitor mollis.
-
-Duis elementum efficitur auctor. Nam nisi nulla, fermentum sed arcu vel, posuere semper dui. Fusce ac imperdiet felis. Aenean quis vestibulum nisl. Integer sit amet tristique neque, at suscipit tortor. Morbi et placerat ante, vel molestie dui. Vivamus in nibh eget massa facilisis accumsan. Nunc et purus ac urna fermentum ultrices eget sit amet justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras elementum dui nunc, ac tempor odio semper et. Ut est ipsum, sollicitudin eleifend nisl eu, scelerisque cursus nunc. Nam at lectus vulputate, volutpat tellus vel, pharetra mauris. Integer at aliquam massa, at iaculis sem. Morbi nec imperdiet odio. In hac habitasse platea dictumst.
-
-Mauris a neque lobortis, venenatis erat ut, eleifend quam. Nullam tincidunt tellus quis ligula bibendum, a malesuada erat gravida. Phasellus eget tellus non risus tincidunt sagittis condimentum quis enim. Donec feugiat sapien sit amet tincidunt fringilla. Vivamus in urna accumsan, vehicula sem in, sodales mauris. Aenean odio eros, tristique non varius id, tincidunt et neque. Maecenas tempor, ipsum et sollicitudin rhoncus, nibh eros tempus dolor, vitae dictum justo massa in eros. Proin nec lorem urna. In ullamcorper vitae felis sit amet tincidunt. Maecenas consectetur iaculis est, eu finibus mi scelerisque et. Nulla id ex varius, ultrices eros nec, luctus est. Aenean ac ex eget dui pretium mattis. Ut vitae nunc lectus. Proin suscipit risus eget ligula sollicitudin vulputate et id lectus.
+\textbf{JOHNS BIT ABOUT REPORT GENERATOR}
 
 
 \chapter{Methodology}
-About one to two pages.
-Describe the way you went about your project:
+
+Consisting of a team of two we communicated weekly through Skype calls,reviewing over each others code. The process was incremental as we first primarily spending a lot of time researching and understanding the environment. We went through cycles of researching and going through tutorials on Hibernate and then later on tutorials for SpringMVC. This helped reinforce our understanding of how everything worked. At times we would meet up to do some paired programming, this proved as a great experience as we were able to help each other understanding the project a lot quicker. The was numerous cycles of experimenting with Hibernate, trying pass information through it to the database and gradually building up knowledge from there. 
+
+We used GitHub as a repository for our code. This is how the code you later be passed over to the developers at RoamPA. Using GitHub enabled us to download each others work and test locally. GitHub greatly helped our work-flow enabling us to share code between us in minutes remotely from home.
+
+We were restrained to using technologies that would only work on an Apache Tomcat server. This means programming using the following
+
 \begin{itemize}
-\item Agile / incremental and iterative approach to development. Planning, meetings.
-\item What about validation and testing? Junit or some other framework.
-\item If team based, did you use GitHub during the development process.
-\item Selection criteria for algorithms, languages, platforms and technolo-gies.
-\end{itemize}
-Check out the nice graphs in Figure \ref{tikz:graphs}, and the nice diagram in Figure \ref{tikz:mydiagram}.
-
-\begin{figure}
-  \centering
-  \begin{tikzpicture}
-  \begin{scope}[every node/.style={circle,thick,draw}]
-  \node (a) at (0,2) {a};
-  \node (b) at (2,2) {b};
-  \node (c) at (2,0) {c};
-  \node (d) at (0,0) {d};
-  \end{scope}
-  \begin{scope}[every edge/.style={draw=black,thick}]
-  \path (a) edge (b);
-  \path (b) edge (c);
-  \path (b) edge (d);
-  \path (c) edge (d);
-  \end{scope}
-  \node () at (1,-1) {$G_1$};
-  \end{tikzpicture}
-  \hspace{1.5cm}
-  \begin{tikzpicture}
-  \begin{scope}[every node/.style={circle,thick,draw}]
-  \node (1) at (0,2) {a};
-  \node (2) at (2,2) {b};
-  \node (3) at (2,0) {c};
-  \node (4) at (0,0) {d};
-  \end{scope}
-  \begin{scope}[every edge/.style={draw=black,thick}]
-  \path (1) edge (2);
-  \path (1) edge (3);
-  \path (1) edge (4);
-  \path (3) edge (4);
-  \end{scope}
-  \node () at (1,-1) {$G_2$};
-  \end{tikzpicture}
-  \caption{Nice pictures}
-  \label{tikz:graphs}
-\end{figure}
-
-
-\begin{figure}
-  \centering
-  \begin{tikzpicture}[node distance=6cm]
-  \node (a) [rect] {A Big Blue Block};
-  \node (b) [oval, right of=a] {And His Oval Friend};
-  \draw [line] (a) -- (b);
-  \end{tikzpicture}
-  \caption{Nice pictures}
-  \label{tikz:graphs}
-\end{figure}
-
-
-\chapter{Technology Review}
-About seven to ten pages.
-\begin{itemize}
-\item Describe each of the technologies you used at a conceptual level. Standards, Database Model (e.g. MongoDB, CouchDB), XMl, WSDL, JSON, JAXP.
-\item Use references (IEEE format, e.g. [1]), Books, Papers, URLs (timestamp) – sources should be authoritative. 
+	\item{Programming all of the server backend in Java}
+	\item{Designing all of the webpages using HTML/CSS Javascript and JQuery, these then were later fitted into JSP pages}
+	\item{Keeping all of the database queries to conform with MySQL}
+	\item{Using Hibernate to facilitate the passage of data too and from the database}
+	\item{Using SpringMVC to manage the structure of the project}
 \end{itemize}
 
-\section{XML}
-Here's some nicely formatted XML:
-\begin{minted}{xml}
-<this>
-  <looks lookswhat="good">
-    Good
-  </looks>
-</this>
-\end{minted}
+This meant the only real choice in technologies to use we had was deciding on what map API to use.
+
+Google Maps was always the first consideration for what mapping API would use. The most well known and popular choice may not always be the best solution to the problem. This lead us to experimenting with several other map API's. Alternatives involved looking at Bing Maps, OpenStreetMap and Leaflet. Even with all of the choice Google Maps still proved to be the best selection. There were varying reasons for not using tha alternatives primarily because of terms of contract, the cost and the map API's being relatively new left them open to change in future. Google Maps has been around 11 years and is constantly updated. Google Maps API allowed querying exactly what we wanted. Google Places is part of the Google Maps API and allows for querying using different type filters. An example of some of the type filters are airports,libraries, department stores, restaurants etc. You can pass in a location, a filter and a radius to the API and have all businesses of that type returned back in JSON format. \newline
+
+\textbf{JOHNS BIT ABOUT Methodology}
+
+\chapter{Technology Review Breakdown}
+
+\begin{itemize}	
+	\item Spring MVC and MVC	
+	\item Hibernate ORM and MySQL
+	\item HTML and CSS, Javascript/jQuery
+	\item JSP Pages
+\end{itemize}
+
+\section{Spring MVC and MVC}
+
+SpringMVC means Spring Model-View-Controller. SpringMVC is the framework we had to conform to. Quite a lot of time was spent learning how to use Spring along with understanding Hibernate ORM.
+
+Model View Controller is a design pattern which consists of a Model, a View and a Controller. MVC is a widely used design pattern by web application frameworks. A user makes a request to the server through a controller and a view is served back. Traditionally the controller will take the request and then manage gathering all of the information from the database and build up a View. Once the information is gathered the controller finally serves the completed view to the user. This view is typically a mix of static and dynamic information based of what's currently in the database. This is a common design pattern for web applications. It scales well and deals with pushing the right information to the user based on the parameters passed to the controller. A request comes in from the user and a response is passed back to the user in the form of a response or a view. Shown in the image below.
+
+\begin{center}    
+   	\includegraphics[height=6cm, width=9cm]{img/mvc.png}
+\end{center}
+
+SpringMVC has it's own slightly altered version of this. It works off the same principals just with a more indept controller.
+
+\begin{center}    
+	\includegraphics[height=6cm, width=10cm]{img/springmvc.png}
+\end{center}
+
+\noindent After receiving an HTTP request, DispatcherServlet consults the HandlerMapping to call the appropriate Controller. \newline
+
+\noindent The Controller takes the request and calls the appropriate service methods based on used GET or POST method. The service method will set model data based on defined business logic and returns view name to the DispatcherServlet. \newline
+
+\noindent The DispatcherServlet will take help from ViewResolver to pickup the defined view for the request. \newline 
+
+\noindent Once the view is finalized, The DispatcherServlet passes the model data to the view which is finally rendered on the browser. \newline
+
+\noindent It was very important to the project to understand this MVC concept.
+
+\section{Hibernate ORM}
+
+Hibernate ORM is referred usually too as Hibernate for short. Hibernate is an Object Relational Mapping framework which is what ORM stands for. ORM is a technique for mapping objects, in our case, mapping instances of Java classes and relating them to tables and columns in our chosen database. There instances of Java classes are known as POJO's or plain ordinary Java objects. Mapping of the objects to columns and tables in Hibernate is done through XML files or more recently through annotations. Hibernate XML files can be generated through Eclipse but if column names differ from field names you will find yourself spending a lot of time manually editing these files. This leads a lot of margin for error and leads to a lot of overhead. E.g Manually assigning primary keys, fields and making sure relations are properly defined. 
+\noindent \newline \newline Below is an example of this 
+
+\begin{center}    
+	\includegraphics[height=9cm, width=14cm]{img/hibernatemapping.png}
+\end{center}
+
+Annotations, which were brought in by newer versions of Hibernate scraps the ideas of these XML files and makes things alot easier. Instead of mapping out every member variable for a class you can set up mapping now with a few simple annotations
+
+\begin{center}    
+	\includegraphics[height=18cm, width=12cm]{img/hibernateclass.png}
+\end{center}
+
+Hibernate also has a configuration file which must be set up. This holds connection information for the database and other settings.
+
+\begin{center}    
+	\includegraphics[height=14cm, width=13cm]{img/hibernatesettings.png}
+\end{center}
+
+Originally experimenting and learning was done using version 3 of Hibernate and used Hibernates Object Relational Mapping using XML files. These files are in typical XML format. To use this method of mapping must define the mapped files in the hibernate configuration file, if not when you try to commit the object to the database an exception is thrown. Furthermore any errors in the XML or mistypes in the mapping will stop any operations using this object.
+
+We were successful with implementing some basic CRUD methods (Create,Read,Update and Delete). This required alot of manual configuration with the XML files. The Eclipse IDE which we used allows you to generate these hbm.xml files but they were not always correct. You must take into account that when generating these xml mapping files Eclipse has no knowledge of the database. If for whatever reason you have configured your column names in the database differently you will have configure them manually for every POJO with mapping in your project. Due to this it was best to keep field names in the POJO classes the same in both the project and the database. Hibernate will also try to generate keys and guess which field is key in the POJO or not even find the key at all. Usually the autogeneration just looked for a field called "id". Due to this you'll have to manually configure the id and it's relationship. Another major overhead of autogenerating these files is having to generate a mapping file for each class dependant on the current class you are generating the mapping for. The more relations an object has, the more files you have to configure and this was very tedious. The margin for error was high, autogeneration lead to mistakes and overall it was very rigid. This lead to very slow workflow because the IDE wouldn't return the location of errors in these files and would leave you guessing alot of the time. This experience stood to us as we now knew how to commit the objects to the database correctly. Once we had information going into the database and coming back we went back into another research phase.
+
+Upon researching more we found alot of information about using annotations with Hibernate and that in recent version they had removed away from the traditional method of mapping using the hbm.xml files. In the case where future changes might be made to the work we have worked on it was best to research annotations more as it seemed it could speed up development and remove the need for those mapping files. We moved up a version of Hibernate and discovered Hibernate JPA Annotations. While we succeeded in getting this XML mapping working Hibernate Annotations drastically changed the workflow. Annotations removed the need for hbm.xml files and you could simply add simple annotations to the POJO class.
+
+Creating the actual database from these classes had to be done manually. Hibernate does have the capacity to do this automatically based off the current classes but this lead to issues. The particular component was "hibernate.hbm2ddl.auto" this is called in the spring.xml file which serves as configuration file for server connection strings and to name the annotated or mapped classes. The reason this wasn't used was because it would force the generation of tables for classes we didn't use and forced the generation of tables for interfaces strangely. Some of these tables weren't needed so the tables that Hibernate generated for us were used as a guide more than anything. Using Hibernate we also found that Hibernate would look for those interface tables, this really complicated things, we only required a minimal amount of tables in the database. Due to this the decision was taken to ignore some of the composition with the POJO's and manage them manually. So in our case the class DefaultOrientationService held a set of Reviews in a ReviewSet. It was much cleaner to assign a review set id to a review and store the reviews individually that way. This solution removed the need for all these interval tables in the database. The idea was to keep our footprint on the database as light as possible. In the end we reduced the amount of tables needed in the database down too four relatively simple tables.
+
+\section{HTML and CSS, Javascript/jQuery}
+
+We didn't use much HTML and CSS because the sidebars and navigation bars around the content would later be updated to the style created by RoamPA's team. A simple Bootstrap was used as a template and was later removed. All of the functionality of the map was achieved using Google Maps Places API. This was all done through Javascript. Anything that needed to be done by the backend was sent through to the proper MVC routes on the server controller by using Javascript.
 
 \chapter{System Design}
-As many pages as needed.
-\begin{itemize}
-\item Architecture, UML etc. An overview of the different components of the system. Diagrams etc… Screen shots etc.
-\end{itemize}
 
-\begin{table}[h]
-  \centering
-  \begin{tabular}{x{2cm}p{3cm}}
-    \toprule \\
-    Column 1 & Column 2 \\
-    \midrule \\
-    Rows 2.1 & Row 2.2 \\
-    \bottomrule
-  \end{tabular}
-  \caption{A table.}
-  \label{table:mytable}
-\end{table}
 
 \chapter{System Evaluation}
 As many pages as needed.
@@ -159,3 +164,30 @@ About three pages.
 \item Highlight your findings from the evalua-tion section / chapter and any opportuni-ties identified.
 \end{itemize}
 
+\begin{thebibliography}{1}
+	\bibitem[1]{Link1}https://www.enterprise-ireland.com/en/
+	\bibitem[2]{Link2}https://www.tripadvisor.ie/
+	\bibitem[3]{Link3} X
+	\bibitem[4]{Link4} X
+	\bibitem[5]{Link5} X
+\end{thebibliography}
+
+
+%= - 1 Apache Tomcat ~ http://tomcat.apache.org/ 
+%= - 2 Hibernate ORM~ http://hibernate.org/
+%= - 3 Spring MVC ~ https://spring.io/
+%= - 4 JSP Pages ~ https://docs.oracle.com/javaee/5/tutorial/doc/bnagy.html
+%= - 5 ModelViewController Explained ~ http://blog.codinghorror.com/understanding-model-view-controller/ 
+%= - 6 SpringMVC ~ http://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm
+%= - 7 Hibernate Example ~ http://www.tutorialspoint.com/hibernate/hibernate_mapping_files.htm
+%=  http://puu.sh/og17d/1dde409ae4.png
+%= - 8 Hibernate Annotations ~ http://www.tutorialspoint.com/hibernate/hibernate_annotations.htm
+%= - 9 Hibernate Configuration ~ http://www.tutorialspoint.com/hibernate/hibernate_configuration.htm
+%= - 10 OpenStreetMap ~ http://wiki.openstreetmap.org/wiki/API
+%= - 11 Leaflet ~ http://leafletjs.com/
+%= - 12 Bing Maps ~ https://www.microsoft.com/maps/choose-your-bing-maps-API.aspx
+%= - 13 Example Google Places ~ https://developers.google.com/places/javascript/
+%= - 14 Hibernate JPA Annotations ~ https://docs.jboss.org/hibernate/stable/annotations/reference/en/html_single/
+%= - API definition https://en.wikipedia.org/wiki/Application_programming_interface
+%= - IDE definition http://searchsoftwarequality.techtarget.com/definition/integrated-development-environment
+%= - Eclipse https://eclipse.org/
