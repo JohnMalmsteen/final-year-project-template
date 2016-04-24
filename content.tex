@@ -103,7 +103,7 @@ Fortunately in the first iteration we had created views in the database which we
 
 \section{Spring MVC and MVC}
 
-SpringMVC means Spring Model-View-Controller. SpringMVC is the framework we had to conform to. Quite a lot of time was spent learning how to use Spring along with understanding Hibernate ORM.
+SpringMVC\cite{SpringMVC} means Spring Model-View-Controller. SpringMVC is the framework we had to conform to. Quite a lot of time was spent learning how to use Spring along with understanding Hibernate ORM.
 
 Model View Controller is a design pattern which consists of a Model, a View and a Controller. MVC is a widely used design pattern by web application frameworks. A user makes a request to the server through a controller and a view is served back. Traditionally the controller will take the request and then manage gathering all of the information from the database and build up a View. Once the information is gathered the controller finally serves the completed view to the user. This view is typically a mix of static and dynamic information based of what's currently in the database. This is a common design pattern for web applications. It scales well and deals with pushing the right information to the user based on the parameters passed to the controller. A request comes in from the user and a response is passed back to the user in the form of a response or a view. Shown in the image below.
 
@@ -111,17 +111,17 @@ Model View Controller is a design pattern which consists of a Model, a View and 
    	\includegraphics[height=6cm, width=9cm]{img/mvc.png}
 \end{center}
 
-SpringMVC has it's own slightly altered version of this. It works off the same principals just with a more indept controller.
+SpringMVC has it's own slightly altered version of this. It works off the same principals just with a more in depth controller.
 
 \begin{center}    
 	\includegraphics[height=6cm, width=10cm]{img/springmvc.png}
 \end{center}
 
-\noindent After receiving an HTTP request, DispatcherServlet consults the HandlerMapping to call the appropriate Controller. \newline
+\noindent After receiving an HTTP request, DispatcherServlet\cite{Dispatcher} consults the HandlerMapping\cite{HandlerMapping} to call the appropriate Controller. \newline
 
 \noindent The Controller takes the request and calls the appropriate service methods based on used GET or POST method. The service method will set model data based on defined business logic and returns view name to the DispatcherServlet. \newline
 
-\noindent The DispatcherServlet will take help from ViewResolver to pickup the defined view for the request. \newline 
+\noindent The DispatcherServlet will take help from ViewResolver to pick up the defined view for the request. \newline 
 
 \noindent Once the view is finalized, The DispatcherServlet passes the model data to the view which is finally rendered on the browser. \newline
 
@@ -129,7 +129,7 @@ SpringMVC has it's own slightly altered version of this. It works off the same p
 
 \section{Hibernate ORM}
 
-Hibernate ORM is referred usually too as Hibernate for short. Hibernate is an Object Relational Mapping framework which is what ORM stands for. ORM is a technique for mapping objects, in our case, mapping instances of Java classes and relating them to tables and columns in our chosen database. There instances of Java classes are known as POJO's or plain ordinary Java objects. Mapping of the objects to columns and tables in Hibernate is done through XML files or more recently through annotations. Hibernate XML files can be generated through Eclipse but if column names differ from field names you will find yourself spending a lot of time manually editing these files. This leads a lot of margin for error and leads to a lot of overhead. E.g Manually assigning primary keys, fields and making sure relations are properly defined. 
+Hibernate ORM\cite{Hibernate} is referred usually too as Hibernate for short. Hibernate is an Object Relational Mapping framework which is what ORM stands for. ORM is a technique for mapping objects, in our case, mapping instances of Java classes and relating them to tables and columns in our chosen database. There instances of Java classes are known as POJO's or plain ordinary Java objects. Mapping of the objects to columns and tables in Hibernate is done through XML\cite{HibernateXML}\cite{XML} files or more recently through annotations\cite{HibernateAnnotations}. Hibernate XML files can be generated through Eclipse but if column names differ from field names you will find yourself spending a lot of time manually editing these files. This leads a lot of margin for error and leads to a lot of overhead. E.g Manually assigning primary keys, fields and making sure relations are properly defined. 
 \noindent \newline \newline Below is an example of this 
 
 \begin{center}    
@@ -158,7 +158,7 @@ Creating the actual database from these classes had to be done manually. Hiberna
 
 \section{HTML and CSS, JavaScript/jQuery}
 
-We didn't use much HTML and CSS because the sidebars and navigation bars around the content would later be updated to the style created by RoamPA's team. A simple Bootstrap was used as a template and was later removed. All the functionality of the map was achieved using Google Maps Places API. This was all done through JavaScript. Anything that needed to be done by the back-end was sent through to the proper MVC routes on the server controller by using JavaScript.
+We didn't use much HTML\cite{HTML} and CSS\cite{CSS} because the sidebars and navigation bars around the content would later be updated to the style created by RoamPA's team. A simple Bootstrap\cite{Bootstrap} was used as a template and was later removed. All the functionality of the map was achieved using Google Maps Places API\cite{GoogleMaps}. This was all done through JavaScript\cite{ECMAS}. Anything that needed to be done by the back-end was sent through to the proper MVC routes on the server controller by using JavaScript.
 
 \section{Review Systems Literature}
 
@@ -174,7 +174,7 @@ We know that in the field of traditional marketing, by 'Word of Mouth', that the
 
 Lopez et al\cite{Lopez} performed research on the \emph{yelp.com} platform comparing the 'usefulness' rating of reviews to the traditional WOM model, and found that many of the 'cues' provided by the site to indicate a reviewers credibility or expertise strongly correlated to 'high usefulness' ratings for reviews, particularly in the case of 'local expertise' they found: 
 
-\emph{"Compared to a reviewer with only one review in the neighbourhood, the count of votes increases 14.3\% when the reviewer has more than five reviews in the neighbourhoodd."}
+\emph{"Compared to a reviewer with only one review in the neighbourhood, the count of votes increases 14.3\% when the reviewer has more than five reviews in the neighbourhood."}
 
 In the case of Electronic Word of Mouth via online review systems we see that there are some differences in the model;
 
