@@ -3,35 +3,35 @@
 \chapter*{About this project}
 \paragraph{Abstract}
 
-This project was contracted to us through Enterprise Ireland1[1] from a company called RoamPA. We have previously worked on a project for RoamPA in the past. RoamPA was building a web application aimed at business users and required two modules to be developed for them externally. One of the modules consists of generating reports for a user based on streamlined, friendly queries for user in a management position. This system would let the user generate queries about users or groups of users relating to their business activities. The other module consists of a reviews system which allows users to generate reviews about businesses,faculties, points of interest etc. The review system requires the ability to create, view, like and dislike reviews, all of which is presented to the user through a map. Both of these modules had to be created from scratch and had to integrate into their existing server environment whilst using their database technologies. There was a lot of requirements, frameworks and dependencies. This project was a great experience and because it required knowledge about technologies we had never used before so we were delighted to take this challenge.
+This project was contracted to us through Enterprise Ireland1[1] from a company called RoamPA. We have previously worked on a project for RoamPA in the past. RoamPA was building a web application aimed at business users and required two modules to be developed for them externally. One of the modules consists of generating reports for a user based on streamlined, friendly queries for user in a management position. This system would let the user generate queries about users or groups of users relating to their business activities. The other module consists of a reviews system which allows users to generate reviews about businesses, faculties, points of interest etc. The review system requires the ability to create, view, like and dislike reviews, all of which is presented to the user through a map. Both of these modules had to be created from scratch and had to integrate into their existing server environment whilst using their database technologies. There was a lot of requirements, frameworks and dependencies. This project was a great experience and because it required knowledge about technologies we had never used before so we were delighted to take this challenge.
 
 \paragraph{Authors}
 
-The authors of this project are Andrew Sweeney and John Frizzell. We are both graduates of the BSc in Computing in Software Development which was the preceding course to the current honours degree. We both have a great interest in programming and technology. We are constantly seeking ways to improve our knowledge and skills.
+The authors of this project are Andrew Sweeney and John Frizzell. We are both graduates of the BSc Computing in Software Development which was the preceding course to the current honours degree. We both have a great interest in programming and technology. We are constantly seeking ways to improve our knowledge and skills.
 
 
 \chapter{Introduction}
 
-RoamPA Ltd is a start-up company founded by Una McNeill. They are developing a web application which is used to streamline the process of moving employees globally for work and business purposes. They wish to provide a much improved employee experience, significant cost savings to clients and greater return on investments with assignments and business travel.
+RoamPA Ltd is a start-up company founded by Una McNeill. They are developing a web application which is used to streamline the process of moving employees globally for work and business purposes. They wish to provide a much improved employee experience, significant cost savings to enterprise clients and greater return on investments with assignments and business travel.
 
-We had previously worked for her on another project. The previous project had brought us outside the scope of our college work and proved to be a great learning experience. A year later We were asked again if they would develop two separate modules for this web application.
+We had previously worked for her on another project. The previous project had brought us outside the scope of our college work and proved to be a great learning experience. A year later we were asked again if they would develop two separate modules for this web application, one of which was updating our legacy code from the previous project to integrate with their new Java based source code.
 
-This time the focus of the project was completely different. This new project involved technologies and methodologies new to us. The focus was to create a reviews system where a user can view, create and rate reviews. The reviews would be then displayed an some form of map.\newline
+This time the project focus was completely different. This new project involved technologies and methodologies new to us. The focus was to create a reviews system where a user can view, create and rate reviews. The reviews would be then displayed an some form of map.\newline
 
-\textbf{JOHNS BIT ABOUT REPORT GENERATOR}\newline
 
-All of these technologies were outside of the scope of our college work and required a lot of research, experimentation and tutorials to complete the solution. Aside from programming in Java through our coursework and having some experience with MySQL databases we hadn't any previous experience with these technologies. Our course work covered some basic HTML and CSS in first year, so all of the skills to develop this application were learned as we went and through other experiences with web technologies.
+
+All of these technologies were outside of the scope of our college work and required a lot of research, experimentation and tutorials to complete the solution. Aside from programming in Java through our coursework and having some usage of MySQL databases we did not have any previous experience with these technologies. Our course work covered some basic HTML and CSS in first year, so all of the skills to develop this application were learned as we went and through other experiences with web technologies.
 
 
 \chapter{Context}
 
 \section{Why we chose this project}
 
-Throughout our college course we have developed in many different languages. Java, C\#, C and Python to name a few. We have not had the chance to really to dig deeply into web development. Web languages like PHP and Javascript were not part of our syllabus. Our sister course "Computing in Digital Media" does some of the design elements of web development but not much of the back-end stuff that we've both liked. Throughout our course we had a few semesters that had Database modules involving MYSQL. We heard the current project involved full blown MVC, Servlets, ORM and JSP pages. We also learned that the main language required for the project was Java which is one of the core languages for our college course. This project gave us a whole new area to experiment with and learn. Due to the challenge and interest we accepted the contract for this project.
+Throughout our college course we have developed in many different languages. Java, C\#, C and Python to name a few. We have not had the chance to really dig deeply into web development. Web languages like PHP and JavaScript were not part of our syllabus. Our sister course "Computing in Digital Media" does some of the design elements of web development but not much of the back-end stuff that we've both liked. Throughout our course we had a few semesters that had Database modules involving MySQL. We heard the current project involved full blown Model View Controller (MVC), Java Enterprise Edition (J2EE), Object Relational Mapping (ORM) and Java Server Pages (JSP). We also learned that the main language required for the project was Java which is one of the core languages for our college course. This project gave us a whole new area to experiment with and learn. Due to the challenge and interest we accepted the contract for this project.
 
 \section{Challenges we had to face}    
 
-Straight from the beginning, the challenge was to understand all of the frameworks and how all of the different parts of the environment work together. This meant completely understanding concepts like ORM and how they are applied through the framework Hibernate. Other concepts included learning how MVC is applied through SpringMVC with routes etc. There was a lot to research, a lot of frameworks to read up on. There was also numerous dependencies to figure out and all of this had to be. The amount of research, tutorials and understanding to be put into the project was the challenge. 
+Straight from the beginning, the challenge was to understand all of the frameworks and how all of the different parts of the environment work together as we had to conform to the software being developed by the rest of the (multinational) development team. This meant completely understanding concepts like ORM and how they are applied through the framework Hibernate. Other concepts included learning how MVC is applied through SpringMVC with routes etc. There was a lot to research, a lot of frameworks to read up on. There was also numerous dependencies to figure out and all of this had to be. The amount of research, tutorials and understanding to be put into the project was the challenge. 
 
 
 \section{Objectives}
@@ -45,9 +45,9 @@ Straight from the beginning, the challenge was to understand all of the framewor
 
 \section{Specifications}
 
-We were creating a two modules for RoamPA. Both modules had to be integrated onto RoamPA's existing Apache Tomcat server. The Frameworks required of us were to use Hibernate ORM and SpringMVC. The existing database RoamPA uses is MySQL. All of the code handed over to RoamPA must be integrable on their server.
+We were creating two modules for RoamPA. Both modules had to be integrated onto RoamPA's existing Application server. The Frameworks required of us were to use Hibernate ORM and SpringMVC. The existing database RoamPA uses is MySQL. All of the code handed over to RoamPA must be integrable on their server.
 
-The first module involved creating a reviews system. The reviews system should allow the customer to look up an area using a search box and using filters then find locations for buildings like hospitals,restaurants and numerous other points of interest. The customer could then click on the POI and create a review for a business. They can also rate a current review that exists on there and like or dislike it.
+The first module involved creating a reviews system. The reviews system should allow the customer to look up an area using a search box and using filters then find locations for buildings like hospitals,restaurants and numerous other points of interest. The customer could then click on the Point of Interest (POI) and create a review for a business. They can also rate a current review that exists on there and like or dislike it.
 
 The second module \newline
 
@@ -63,8 +63,8 @@ We used GitHub as a repository for our code. This is how the code you later be p
 We were restrained to using technologies that would only work on an Apache Tomcat server. This means programming using the following
 
 \begin{itemize}
-	\item{Programming all of the server backend in Java}
-	\item{Designing all of the webpages using HTML/CSS Javascript and JQuery, these then were later fitted into JSP pages}
+	\item{Programming all of the server back-end in Java}
+	\item{Designing all of the web pages using HTML/CSS JavaScript and jQuery, these then were later fitted into JSP pages}
 	\item{Keeping all of the database queries to conform with MySQL}
 	\item{Using Hibernate to facilitate the passage of data too and from the database}
 	\item{Using SpringMVC to manage the structure of the project}
@@ -75,18 +75,18 @@ This meant the only real choice in technologies to use we had was deciding on wh
 Google Maps was always the first consideration for what mapping API would use. The most well known and popular choice may not always be the best solution to the problem. This lead us to experimenting with several other map API's. Alternatives involved looking at Bing Maps, OpenStreetMap and Leaflet. Even with all of the choice Google Maps still proved to be the best selection. There were varying reasons for not using tha alternatives primarily because of terms of contract, the cost and the map API's being relatively new left them open to change in future. Google Maps has been around 11 years and is constantly updated. Google Maps API allowed querying exactly what we wanted. Google Places is part of the Google Maps API and allows for querying using different type filters. An example of some of the type filters are airports,libraries, department stores, restaurants etc. You can pass in a location, a filter and a radius to the API and have all businesses of that type returned back in JSON format. \newline
 
 \section{Introduction}
-In the context of the time span of computing, Word of Mouth (WOM) has long been shown to be efficacious and an important source of information when consumers wish to make purchasing decisions\cite{Nielsen}. The usage of Word of Mouth as a marketing tool dates back to, at least, the 1970s, after psychologist George Silverman created his 'Word of Mouth Model' after observing focus groups of physicians disucssing pharaceutical products~\cite{WOM}. Here he found that within a focus group the positive opinion of one physician could sway other members of the group who had previously been skeptical, and even the opinions of those whose patients had had negative experiences with a particular drug.
+In the context of the time span of computing, Word of Mouth (WOM) has long been shown to be efficacious and an important source of information when consumers wish to make purchasing decisions\cite{Nielsen}. The usage of Word of Mouth as a marketing tool dates back to, at least, the 1970s, after psychologist George Silverman created his 'Word of Mouth Model' after observing focus groups of physicians discussing pharmaceutical products~\cite{WOM}. Here he found that within a focus group the positive opinion of one physician could sway other members of the group who had previously been sceptical, and even the opinions of those whose patients had had negative experiences with a particular drug.
 
 With the rapid proliferation of digital services that allow consumers to review services online this model is now applied as an Electronic Word of Mouth (eWOM), in 2008 Nielsen Online found that 81\% of online shoppers read online reviews from other customers and 71\% agreed that these reviews made them more comfortable in purchasing the product, in comparison only 14\% sought out reviews from an established source~\cite{Nielsen}. In the case of tourism B. Brown of the University of Glasgow concluded that tourists will use online reviews as a way to "pre-visit" locations~\cite{Brown}.
 
-Many sites and web platforms supply the user with the ability review services or goods, hoever, the quality and quantity of these reviews vary greatly~\cite{Zhang}.
+Many sites and web platforms supply the user with the ability review services or goods, however, the quality and quantity of these reviews vary greatly~\cite{Zhang}.
 
 \section{Body}
 We know that in the field of traditional marketing, by 'Word of Mouth', that the perceived expertise of the reviewer correlates to how likely it is that the receiver will pay attention to the information on offer~\cite{Bansal}. Given that most reviews online are anonymous or tied to identities which the receiver of the review knows nothing about this perceived expertise must be attained in other ways:
 
-Lopez et al\cite{Lopez} performed research on the \emph{yelp.com} platform comparing the 'usefulness' rating of reviews to the traditional WOM model, and found that many of the 'cues' provided by the site to indicate a reviewers creidibility or expertise strongly correlated to 'high usefulness' ratings for reviews, particularly in the case of 'local expertise' they found: 
+Lopez et al\cite{Lopez} performed research on the \emph{yelp.com} platform comparing the 'usefulness' rating of reviews to the traditional WOM model, and found that many of the 'cues' provided by the site to indicate a reviewers credibility or expertise strongly correlated to 'high usefulness' ratings for reviews, particularly in the case of 'local expertise' they found: 
 
-\emph{"Compared to a reviewer with only one review in the neighborhood, the count of votes increases 14.3\% when the reviewer has more than five reviews in the neighborhood."}
+\emph{"Compared to a reviewer with only one review in the neighbourhood, the count of votes increases 14.3\% when the reviewer has more than five reviews in the neighbourhoodd."}
 
 In the case of Electronic Word of Mouth via online review systems we see that there are some differences in the model;
 
@@ -94,7 +94,7 @@ The critical factor in this context is not necessarily the perceived expertise b
 
 Zhang et al proposed a Probabilistic framework for ranking helpfulness of eWOMs, however there were problems when some eWOMs did not have enough user ratings~\cite{Zhang}. There is also some trouble with the self selective nature of the response to this kind of polling as outlined by Sipos et al\cite{Sipos} where they demonstrate that 
 
-\emph{". . . the observed connection between context and voting  behavior  cannot  be  captured  by  a  cardinal  voting model (Section 3), where users make absolute and independent judgments about helpfulness."}
+\emph{". . . the observed connection between context and voting  behaviour  cannot  be  captured  by  a  cardinal  voting model (Section 3), where users make absolute and independent judgements about helpfulness."}
 
 i.e. the context in which a review is presented influences the polarity of the ratings that it receives.
 
@@ -106,7 +106,7 @@ Another phenomena that one encounters in the context of Electronic Word of Mouth
 
 \emph{". . . all forms of malicious manipulation of user generated data so as to influence usage patterns of the data"}
 
-This definition would, in some cases, overlap with fraud, and spam need not be malicious in all situations, however, they refer to this as 'review spam' or 'opinion spam' in the context of online reviews, and characterise it as reviewers habitually leaving reviews rating services at a significant deviation from the mean rating for that service. They propose to implment aggregation of the reviewer to detect this behaviour and preserve the integrity of the review system. This approach also seems to suffer from removing the reviews of people who are simply more or less critical than average.
+This definition would, in some cases, overlap with fraud, and spam need not be malicious in all situations, however, they refer to this as 'review spam' or 'opinion spam' in the context of online reviews, and characterise it as reviewers habitually leaving reviews rating services at a significant deviation from the mean rating for that service. They propose to implement aggregation of the reviewer to detect this behaviour and preserve the integrity of the review system. This approach also seems to suffer from removing the reviews of people who are simply more or less critical than average.
 
 Centeno et al\cite{Centeno} discuss online review system fraud, defining fraud as:
 
@@ -116,23 +116,23 @@ They propose a solution to this problem by replacing the standard rating system 
 
 \emph{'Which review do you think users would find more helpful, A or B?'}.
 
-Dubey et al\cite{Dubey} state that due to the vast quantity of reviews on some services that users will only read a small sample of these which may not be represntative, they propose a technique of summarising reviews by first clustering them by user rank (which has been outlined above) and then selecting the sections of those reviews which are similar to the others in their cluster. They do not consider this an opinion mining activity as there isn't semantic analysis taking place, merely similarity analysis. This approach has a drawback in that it \emph{". . . sacrifices the immediacy and narrative structure of reviews"}\cite{Lappas} according to Lappas et al of Boston University. 
+Dubey et al\cite{Dubey} state that due to the vast quantity of reviews on some services that users will only read a small sample of these which may not be representative, they propose a technique of summarising reviews by first clustering them by user rank (which has been outlined above) and then selecting the sections of those reviews which are similar to the others in their cluster. They do not consider this an opinion mining activity as there isn't semantic analysis taking place, merely similarity analysis. This approach has a drawback in that it \emph{". . . sacrifices the immediacy and narrative structure of reviews"}\cite{Lappas} according to Lappas et al of Boston University. 
 
 Jin et al\cite{Jin} recommend a true opinion mining algorithm which clusters reviews by ordinal rank (rank they give to the service) and then using the service characteristics as keywords to perform the opinion mining. The ordinal clustering allows for both detecting customers fulfilled and unfulfilled needs without need to resort to elaborate semantic analysis.
 
-Lappas et al\cite{Lappas} also state that ranking by 'usefulness' or 'importance' as we saw earlier \emph{"Leads to redundant or non-representative summaries"}, they propose a system which selects a subset of reviews in those cases where there are a number that it is unfeasible for the user to scan through manually, and use a similar technique to that of Jin et al to select reviews that deal with key features of the service. Their aim is to maintain the statistical properties of the superset in their subset with regards to both ordinal distribution and feature discussion.
+Lappas et al\cite{Lappas} also state that ranking by 'usefulness' or 'importance' as we saw earlier \emph{"Leads to redundant or non-representative summaries"}, they propose a system which selects a subset of reviews in those cases where there are a number that it is infeasible for the user to scan through manually, and use a similar technique to that of Jin et al to select reviews that deal with key features of the service. Their aim is to maintain the statistical properties of the superset in their subset with regards to both ordinal distribution and feature discussion.
 
-Ghose et al\cite{Ghose} also propose an opinion mining approach but they tune their alogrithm to maximise economic results, i.e. promoting the reviews which have the largest effect on sales. Here they propose to assign the review a Subjectivity/Objectivity score by using text mining to determine whether the review is factual, based on features of the service, or sentimental, based on a personal description of the service or experience with the service. They then analysed these subjectivity values against economic impact. The findings here were not conclusive, however they did find a correlation between reviews that combined objectivity and subjectivity with higher 'usefulness' scores from users.
+Ghose et al\cite{Ghose} also propose an opinion mining approach but they tune their algorithm to maximise economic results, i.e. promoting the reviews which have the largest effect on sales. Here they propose to assign the review a Subjectivity/Objectivity score by using text mining to determine whether the review is factual, based on features of the service, or sentimental, based on a personal description of the service or experience with the service. They then analysed these subjectivity values against economic impact. The findings here were not conclusive, however they did find a correlation between reviews that combined objectivity and subjectivity with higher 'usefulness' scores from users.
 
 \section{Analysis}
-What becomes clear from the predominance of the literature is that this field of research is booming alongside the prevailing business model of service aggregation with many business being based on the disruptive business plan of 'man in the middle, service aggregator, platform' a la \emph{Uber}, \emph{AirBnB}, \emph{TripAdvisor} etc. All of these platforms feature user reviews prominently and the ammount of raw user content being produced mandates aggregation of some sort. 
+What becomes clear from the predominance of the literature is that this field of research is booming alongside the prevailing business model of service aggregation with many business being based on the disruptive business plan of 'man in the middle, service aggregator, platform' a la \emph{Uber}, \emph{AirBnB}, \emph{TripAdvisor} etc. All of these platforms feature user reviews prominently and the amount of raw user content being produced mandates aggregation of some sort. 
 
 As we have seen there are many competing approaches to this problem each with downsides, whether they be functional or in difficulty of implementation, or both. It is apparent that the approaches to solve the problem have continued to evolve as the commonality of the problem increases. The simplest approaches are allowing users to rate services and simply displaying those reviews in some order, from there reviews are reviewed by other users, reviewers build up aggregate scores to determine credible reviewers, and then there are the statistical approaches, and finally the sentiment mining and machine learning approaches.
 
 We also see from the Lim et al paper\cite{Lim} and the Centeno et al\cite{Centeno} paper that there are pitfalls that any review system must deal with beyond normal security, the system also has to deal with abnormal user behaviour to ensure integrity and value to other users.
 
 \section{Conclusion}
-In conclusion, the literature seems to indicate that a review system must be designed with context in mind, some solutions are better suited to environments where there is an abundance of user data, in the form of reviews and rankings of those reviews, which need to be aggregated, while others are better suited to environments with a scarcity of reviews and rankings. In addition we see that some environments can lend to enhanced 'perceived expertise' (which translates to perceived credibility in an electronic context) from the tranditional Word of Mouth model, in that an envirmonent can, at least, 'confirm' that the reviewer is an actual customer (i.e. confirmed purchase on a retailer site). Other environments allow anyone to leave reviews in which makes the case for any given reviewers perceived credibility is harder to make. In the latter situation, the possibilty of fraud and undesirable user behaviour (i.e. spamming) is of more concern, so the recommendations of \cite{Lim}Lim et al and \cite{Centeno}Centeno et al are more important.
+In conclusion, the literature seems to indicate that a review system must be designed with context in mind, some solutions are better suited to environments where there is an abundance of user data, in the form of reviews and rankings of those reviews, which need to be aggregated, while others are better suited to environments with a scarcity of reviews and rankings. In addition we see that some environments can lend to enhanced 'perceived expertise' (which translates to perceived credibility in an electronic context) from the traditional Word of Mouth model, in that an environment can, at least, 'confirm' that the reviewer is an actual customer (i.e. confirmed purchase on a retailer site). Other environments allow anyone to leave reviews in which makes the case for any given reviewers perceived credibility is harder to make. In the latter situation, the possibility of fraud and undesirable user behaviour (i.e. spamming) is of more concern, so the recommendations of \cite{Lim}Lim et al and \cite{Centeno}Centeno et al are more important.
 
 It also appears to be of some significance to provide cues as to a users credibility, that is; their level of expertise in a geographical area, how useful their reviews are to other users and so on\cite{Lopez}.
 
@@ -202,7 +202,7 @@ Creating the actual database from these classes had to be done manually. Hiberna
 
 \section{HTML and CSS, Javascript/jQuery}
 
-We didn't use much HTML and CSS because the sidebars and navigation bars around the content would later be updated to the style created by RoamPA's team. A simple Bootstrap was used as a template and was later removed. All of the functionality of the map was achieved using Google Maps Places API. This was all done through Javascript. Anything that needed to be done by the backend was sent through to the proper MVC routes on the server controller by using Javascript.
+We didn't use much HTML and CSS because the sidebars and navigation bars around the content would later be updated to the style created by RoamPA's team. A simple Bootstrap was used as a template and was later removed. All the functionality of the map was achieved using Google Maps Places API. This was all done through JavaScript. Anything that needed to be done by the back-end was sent through to the proper MVC routes on the server controller by using JavaScriptt.
 
 \chapter{System Design}
 
@@ -213,24 +213,17 @@ As many pages as needed.
 \item Prove that your software is robust. How? Testing etc. 
 \item Use performance benchmarks (space and time) if algorithmic.
 \item Measure the outcomes / outputs of your system / software against the objectives from the Introduction.
-\item Highlight any limitations or opportuni-ties in your approach or technologies used.
+\item Highlight any limitations or opportunities in your approach or technologies used.
 \end{itemize}
 
 \chapter{Conclusion}
 About three pages.
 
 \begin{itemize}
-\item Briefly summarise your context and ob-jectives (a few lines).
-\item Highlight your findings from the evalua-tion section / chapter and any opportuni-ties identified.
+\item Briefly summarise your context and objectives (a few lines).
+\item Highlight your findings from the evaluation section / chapter and any opportunities identified.
 \end{itemize}
 
-\begin{thebibliography}{1}
-	\bibitem[1]{Link1}https://www.enterprise-ireland.com/en/
-	\bibitem[2]{Link2}https://www.tripadvisor.ie/
-	\bibitem[3]{Link3} X
-	\bibitem[4]{Link4} X
-	\bibitem[5]{Link5} X
-\end{thebibliography}
 
 
 %= - 1 Apache Tomcat ~ http://tomcat.apache.org/ 
