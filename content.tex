@@ -111,22 +111,6 @@ Model View Controller is a design pattern which consists of a Model, a View and 
    	\includegraphics[height=6cm, width=9cm]{img/mvc.png}
 \end{center}
 
-SpringMVC has it's own slightly altered version of this. It works off the same principals just with a more indept controller.
-
-\begin{center}    
-	\includegraphics[height=6cm, width=10cm]{img/springmvc.png}
-\end{center}
-
-\noindent After receiving an HTTP request, DispatcherServlet consults the HandlerMapping to call the appropriate Controller. \newline
-
-\noindent The Controller takes the request and calls the appropriate service methods based on used GET or POST method. The service method will set model data based on defined business logic and returns view name to the DispatcherServlet. \newline
-
-\noindent The DispatcherServlet will take help from ViewResolver to pickup the defined view for the request. \newline 
-
-\noindent Once the view is finalized, The DispatcherServlet passes the model data to the view which is finally rendered on the browser. \newline
-
-\noindent It was very important to the project to understand this MVC concept.
-
 \section{Hibernate ORM}
 
 Hibernate ORM is referred usually too as Hibernate for short. Hibernate is an Object Relational Mapping framework which is what ORM stands for. ORM is a technique for mapping objects, in our case, mapping instances of Java classes and relating them to tables and columns in our chosen database. There instances of Java classes are known as POJO's or plain ordinary Java objects. Mapping of the objects to columns and tables in Hibernate is done through XML files or more recently through annotations. Hibernate XML files can be generated through Eclipse but if column names differ from field names you will find yourself spending a lot of time manually editing these files. This leads a lot of margin for error and leads to a lot of overhead. E.g Manually assigning primary keys, fields and making sure relations are properly defined. 
@@ -227,6 +211,38 @@ It also appears to be of some significance to provide cues as to a users credibi
 
 \chapter{System Design}
 
+The system consists of many elements and dependencies working together on a Tomcat Server. Developing this system required understanding the defacto standard for developing a Spring MVC application. Spring MVC dictated the of the structure of the application and because this is constraint of the environment the design and flow of data must follow Spring's architectural pattern.
+
+\section{MySQL}
+
+Starting from the bottom of the system design, we knew from our specifications that we would be using a MySQL database. Initially we had tested with mockup objects and then later with MySQLite but the release was to use MySQL. 
+
+MySQL is a relational database that has been around for 20 years, it provides atomicity and is used widely in the industry. It made sense to use a relational database with the application because we are dealing with easily related data. An example of this is evident in our database e.g An orientation service has a review set which relates to views about an establishment. Furthermore these reviews has individual likes and dislikes on them. All of this data is closely related to each other and using a MySQL database made sense to use. Working with this database was also good because the connectors and database drivers between MySQL and Hibernate existed due to MySQL's popularity.
+
+\section{Hibernate and SpringMVC}
+
+Hibernate is a framework that can work closely with SpringMVC to facilitate the transfer of information too and from the database. Hibernate deals with object relational mapping. In Hibernate's case, object relational mapping is the mapping of JAVA objects to databases and columns. Hibernate was key to making the application function.   
+
+
+
+
+
+Spring MVC implements the Model View Controller pattern as mentioned earlier. This meant we couldn't access data directly from the database or HTML pages without dealing with a controller that deals with all of the users requests.
+
+SpringMVC has it's own slightly altered version of this. It works off the same principals just with a more in-dept controller dealing with our users request.
+
+\begin{center}    
+	\includegraphics[height=7cm, width=12cm]{img/springmvc.png}
+\end{center}
+
+\begin{itemize}	
+\item{ After receiving an HTTP request, DispatcherServlet consults the HandlerMapping to call the appropriate Controller.}
+\item{ The Controller takes the request and calls the appropriate service methods based which kind of method used, e.g GET or POST method. The service method will set model data based on defined business logic and returns view name to the DispatcherServlet.}
+\item{ The DispatcherServlet will take help from ViewResolver to pickup the defined view for the request.}
+\item{Once the view is finalized, The DispatcherServlet passes the model data to the view which is finally rendered on the browser.}
+\end{itemize}	
+
+It was very important to the project to understand this MVC concept
 
 \chapter{System Evaluation}
 As many pages as needed.
