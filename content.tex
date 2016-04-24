@@ -85,6 +85,11 @@ The Reports writer upgrade was done in two main sprints:
 In this Sprint the software was converted from the legacy PHP code to Java using the SpringMVC framework. Hibernate was not used here as there was no requirement to update or insert into the database and the nature of the queries involved required flexibility in the object models being used.
 
 There were some other functional changes made: Primarily, the method of report export to Microsoft Excel-readable files was switched from CSV file export to .xlsx (the native excel file type). The reason for this was that this functionality was desired in the first iteration but wasn't implemented since the Excel writer in php was excessively slow, and CSV (which is a plain text format) was used as a compromise. In Java creating the .xslx files was facile and efficient so we opted for meeting the initial requirements of the application rather than a direct functionality replication.
+
+\subsection{Sprint 2}
+The new system implemented a new database schema so our application was switched over to using the new schema in this sprint. 
+
+Fortunately in the first iteration we had created views in the database which were the only tables that the application interacted with. In this sprint equivalent views with the same data and names were created allowing for only minimal changes to be made in the controller logic and front end design.
  
 \chapter{Technology Review}
 
