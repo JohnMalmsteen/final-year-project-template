@@ -55,94 +55,45 @@ The second module \newline
 
 
 \chapter{Methodology}
+We used a form of the Agile development methodology on this project, with iterative prototyping, team VOIP calls, and weekly meetings with our project supervisor/manager as well as frequent meetings and communication with the clients. We used git as our version control system with our repositories being hosted on GitHub.
 
-Consisting of a team of two we communicated weekly through Skype calls,reviewing over each others code. The process was incremental as we first primarily spending a lot of time researching and understanding the environment. We went through cycles of researching and going through tutorials on Hibernate and then later on tutorials for SpringMVC. This helped reinforce our understanding of how everything worked. At times we would meet up to do some paired programming, this proved as a great experience as we were able to help each other understanding the project a lot quicker. The was numerous cycles of experimenting with Hibernate, trying pass information through it to the database and gradually building up knowledge from there. 
+\section{Orientation Sprints}
+(Sprint: \emph{A time period (typically 1–4 weeks) in which development occurs on a set of backlog items that the team has committed to—commonly referred to as a time-box or iteration}) 
+Our Development of the main Orientation module essentially breaks down into 6 sprints:
 
-We used GitHub as a repository for our code. This is how the code you later be passed over to the developers at RoamPA. Using GitHub enabled us to download each others work and test locally. GitHub greatly helped our work-flow enabling us to share code between us in minutes remotely from home.
+\subsection{Sprint  1: Research}
+Our first 'sprint' consisted of researching and understanding the development environment as we had never used J2EE before or used the Spring and Hibernate frameworks. We also used this time to decide on our front end technologies as that is the only area of the project where we had scope for technology selection (since the rest was informed by what was required by the client and existing code base). By front-end technologies we are referring to our approach to dealing with the requirements for maps, markers and other visual elements that would be displayed in our web app.\newline
 
-We were restrained to using technologies that would only work on an Apache Tomcat server. This means programming using the following
+Google Maps was always the first consideration for a mapping API since it is practically ubiquitous . However, the most well known and popular choice may not always be the best solution for the problem. This lead us to experimenting with several other map API’s. Alternatives involved looking at Bing Maps, OpenStreetMap and Leaflet. Even with all of the choice, Google Maps still proved to be the best selection, even surpassing our expectations of what we thought we would be able to get from external APIs. Our intial plan had been to code the area/proximity search ourselves and store places in our data store and perhaps populating it in advance with some sort of web scraper. We found that Google already provides this functionality through the Places API, so we would only have to extend their API and store only our own review data and references to theirs to be accessed through the API on subsequent calls. There were varying reasons for not using the alternatives, primarily because of terms of contract, the cost and the map APIs being relatively new leaving them open to change in future. Google Maps has been around 11 years and the data is constantly updated while the API structure remains stable. Google Maps API allowed querying exactly what we wanted, i.e. area based searching for points of interest / establishments using keyword filters. Google Places is part of the Google Maps API and allows for querying using different type filters. An example of some of the filter types are airports,libraries, department stores, restaurants etc. You can pass in a location, filter set and a radius to the API and have all businesses of that type returned back in JSON format. Another advantage of the Google Maps API is that Google have recently opened it up so that you don't even need an application key to use many features of their API including the basic map/markers functionality that we used as well as the Places API which we also made use of, i.e. it can never become a billable service regardless of how many calls to the API our application makes.
 
-\begin{itemize}
-	\item{Programming all of the server back-end in Java}
-	\item{Designing all of the web pages using HTML/CSS JavaScript and jQuery, these then were later fitted into JSP pages}
-	\item{Keeping all of the database queries to conform with MySQL}
-	\item{Using Hibernate to facilitate the passage of data too and from the database}
-	\item{Using SpringMVC to manage the structure of the project}
-\end{itemize}
+\subsection{Sprint 2}
+In this sprint we coded our first working prototype of the application, using Tomcat servlets with no database (simulating the databases using Plain Old Java Objects (POJOs), i.e. HashMaps in a Mock Data Store object). We got the basic functionality of the front end working, with the user being able to proximity search areas with filters and dd reviews to locations.
 
-This meant the only real choice in technologies to use we had was deciding on what map API to use.
+\subsection{Sprint 3}
+In this sprint we extracted an interface from our Mock Data Store object and implemented our Object Relational Mapping using SQLite as our Relational Database Management System (RDBMS) since this allowed us to spin up a new database in memory on every application launch which was perfect for testing, although obviously lacked the real persistence that would be required for the final product.
 
-Google Maps was always the first consideration for what mapping API would use. The most well known and popular choice may not always be the best solution to the problem. This lead us to experimenting with several other map API's. Alternatives involved looking at Bing Maps, OpenStreetMap and Leaflet. Even with all of the choice Google Maps still proved to be the best selection. There were varying reasons for not using tha alternatives primarily because of terms of contract, the cost and the map API's being relatively new left them open to change in future. Google Maps has been around 11 years and is constantly updated. Google Maps API allowed querying exactly what we wanted. Google Places is part of the Google Maps API and allows for querying using different type filters. An example of some of the type filters are airports,libraries, department stores, restaurants etc. You can pass in a location, a filter and a radius to the API and have all businesses of that type returned back in JSON format. \newline
+\subsection{Sprint 4}
+In this sprint we implemented full Hibernate ORM onto the MySQL RDBMS, so this was really the first 'production' iteration.
 
-\section{Introduction}
-In the context of the time span of computing, Word of Mouth (WOM) has long been shown to be efficacious and an important source of information when consumers wish to make purchasing decisions\cite{Nielsen}. The usage of Word of Mouth as a marketing tool dates back to, at least, the 1970s, after psychologist George Silverman created his 'Word of Mouth Model' after observing focus groups of physicians discussing pharmaceutical products~\cite{WOM}. Here he found that within a focus group the positive opinion of one physician could sway other members of the group who had previously been sceptical, and even the opinions of those whose patients had had negative experiences with a particular drug.
+\subsection{Sprint 5}
+Finally, our tomcat servlets were converted to Spring controllers, and our JSP pages were set up to be returned as views using a view resolver. 
 
-With the rapid proliferation of digital services that allow consumers to review services online this model is now applied as an Electronic Word of Mouth (eWOM), in 2008 Nielsen Online found that 81\% of online shoppers read online reviews from other customers and 71\% agreed that these reviews made them more comfortable in purchasing the product, in comparison only 14\% sought out reviews from an established source~\cite{Nielsen}. In the case of tourism B. Brown of the University of Glasgow concluded that tourists will use online reviews as a way to "pre-visit" locations~\cite{Brown}.
+\section{Reports Writer Sprints}
+The Reports writer upgrade was done in two main sprints:
 
-Many sites and web platforms supply the user with the ability review services or goods, however, the quality and quantity of these reviews vary greatly~\cite{Zhang}.
+\subsection{Sprint 1}
+In this Sprint the software was converted from the legacy PHP code to Java using the SpringMVC framework. Hibernate was not used here as there was no requirement to update or insert into the database and the nature of the queries involved required flexibility in the object models being used.
 
-\section{Body}
-We know that in the field of traditional marketing, by 'Word of Mouth', that the perceived expertise of the reviewer correlates to how likely it is that the receiver will pay attention to the information on offer~\cite{Bansal}. Given that most reviews online are anonymous or tied to identities which the receiver of the review knows nothing about this perceived expertise must be attained in other ways:
-
-Lopez et al\cite{Lopez} performed research on the \emph{yelp.com} platform comparing the 'usefulness' rating of reviews to the traditional WOM model, and found that many of the 'cues' provided by the site to indicate a reviewers credibility or expertise strongly correlated to 'high usefulness' ratings for reviews, particularly in the case of 'local expertise' they found: 
-
-\emph{"Compared to a reviewer with only one review in the neighbourhood, the count of votes increases 14.3\% when the reviewer has more than five reviews in the neighbourhoodd."}
-
-In the case of Electronic Word of Mouth via online review systems we see that there are some differences in the model;
-
-The critical factor in this context is not necessarily the perceived expertise but the perceived credibility of the source, which can be hard to judge since frequently the source of an eWOM document is anonymous. The receiver of WOM information is more likely to find it credible if the source is known to them\cite{Bart}, however this is rarely the circumstance when we are dealing with online reviews and eWOMs, to offset this many eWOM aggregators apply ratings systems for the reviews themselves\cite{Krestel}, however this has it's own challenges and problems, namely that often a simple 'was this review helpful' binary option does not give a good measurement of how credible the source may be. Additionally we can see that new reviews or reviews on niche products are likely to have very few ratings as to their helpfulness\cite{Ghose}. 
-
-Zhang et al proposed a Probabilistic framework for ranking helpfulness of eWOMs, however there were problems when some eWOMs did not have enough user ratings~\cite{Zhang}. There is also some trouble with the self selective nature of the response to this kind of polling as outlined by Sipos et al\cite{Sipos} where they demonstrate that 
-
-\emph{". . . the observed connection between context and voting  behaviour  cannot  be  captured  by  a  cardinal  voting model (Section 3), where users make absolute and independent judgements about helpfulness."}
-
-i.e. the context in which a review is presented influences the polarity of the ratings that it receives.
-
-In their paper, Kim et al\cite{Kim} explored automatically rating reviews by helpfulness without manual user input using a Support Vector Machine regression algorithm relying on the wealth of existing eWOMs from other sites. 
-
-Ammar et al\cite{Ammar} of MIT propose a ranking system based on partial data by combining ordinal (comparison) data and first-order marginal (top preference) data, however this requires two forms of ranking to be carried out by the user, both making comparisons and ranking in order of preference.
-
-Another phenomena that one encounters in the context of Electronic Word of Mouth is 'spam', Lim et al\cite{Lim} define this to be:
-
-\emph{". . . all forms of malicious manipulation of user generated data so as to influence usage patterns of the data"}
-
-This definition would, in some cases, overlap with fraud, and spam need not be malicious in all situations, however, they refer to this as 'review spam' or 'opinion spam' in the context of online reviews, and characterise it as reviewers habitually leaving reviews rating services at a significant deviation from the mean rating for that service. They propose to implement aggregation of the reviewer to detect this behaviour and preserve the integrity of the review system. This approach also seems to suffer from removing the reviews of people who are simply more or less critical than average.
-
-Centeno et al\cite{Centeno} discuss online review system fraud, defining fraud as:
-
-\emph{"The fact of promoting bad entities, or damage the reputation of good entities"} 
-
-They propose a solution to this problem by replacing the standard rating system with a comparison system asking users:
-
-\emph{'Which review do you think users would find more helpful, A or B?'}.
-
-Dubey et al\cite{Dubey} state that due to the vast quantity of reviews on some services that users will only read a small sample of these which may not be representative, they propose a technique of summarising reviews by first clustering them by user rank (which has been outlined above) and then selecting the sections of those reviews which are similar to the others in their cluster. They do not consider this an opinion mining activity as there isn't semantic analysis taking place, merely similarity analysis. This approach has a drawback in that it \emph{". . . sacrifices the immediacy and narrative structure of reviews"}\cite{Lappas} according to Lappas et al of Boston University. 
-
-Jin et al\cite{Jin} recommend a true opinion mining algorithm which clusters reviews by ordinal rank (rank they give to the service) and then using the service characteristics as keywords to perform the opinion mining. The ordinal clustering allows for both detecting customers fulfilled and unfulfilled needs without need to resort to elaborate semantic analysis.
-
-Lappas et al\cite{Lappas} also state that ranking by 'usefulness' or 'importance' as we saw earlier \emph{"Leads to redundant or non-representative summaries"}, they propose a system which selects a subset of reviews in those cases where there are a number that it is infeasible for the user to scan through manually, and use a similar technique to that of Jin et al to select reviews that deal with key features of the service. Their aim is to maintain the statistical properties of the superset in their subset with regards to both ordinal distribution and feature discussion.
-
-Ghose et al\cite{Ghose} also propose an opinion mining approach but they tune their algorithm to maximise economic results, i.e. promoting the reviews which have the largest effect on sales. Here they propose to assign the review a Subjectivity/Objectivity score by using text mining to determine whether the review is factual, based on features of the service, or sentimental, based on a personal description of the service or experience with the service. They then analysed these subjectivity values against economic impact. The findings here were not conclusive, however they did find a correlation between reviews that combined objectivity and subjectivity with higher 'usefulness' scores from users.
-
-\section{Analysis}
-What becomes clear from the predominance of the literature is that this field of research is booming alongside the prevailing business model of service aggregation with many business being based on the disruptive business plan of 'man in the middle, service aggregator, platform' a la \emph{Uber}, \emph{AirBnB}, \emph{TripAdvisor} etc. All of these platforms feature user reviews prominently and the amount of raw user content being produced mandates aggregation of some sort. 
-
-As we have seen there are many competing approaches to this problem each with downsides, whether they be functional or in difficulty of implementation, or both. It is apparent that the approaches to solve the problem have continued to evolve as the commonality of the problem increases. The simplest approaches are allowing users to rate services and simply displaying those reviews in some order, from there reviews are reviewed by other users, reviewers build up aggregate scores to determine credible reviewers, and then there are the statistical approaches, and finally the sentiment mining and machine learning approaches.
-
-We also see from the Lim et al paper\cite{Lim} and the Centeno et al\cite{Centeno} paper that there are pitfalls that any review system must deal with beyond normal security, the system also has to deal with abnormal user behaviour to ensure integrity and value to other users.
-
-\section{Conclusion}
-In conclusion, the literature seems to indicate that a review system must be designed with context in mind, some solutions are better suited to environments where there is an abundance of user data, in the form of reviews and rankings of those reviews, which need to be aggregated, while others are better suited to environments with a scarcity of reviews and rankings. In addition we see that some environments can lend to enhanced 'perceived expertise' (which translates to perceived credibility in an electronic context) from the traditional Word of Mouth model, in that an environment can, at least, 'confirm' that the reviewer is an actual customer (i.e. confirmed purchase on a retailer site). Other environments allow anyone to leave reviews in which makes the case for any given reviewers perceived credibility is harder to make. In the latter situation, the possibility of fraud and undesirable user behaviour (i.e. spamming) is of more concern, so the recommendations of \cite{Lim}Lim et al and \cite{Centeno}Centeno et al are more important.
-
-It also appears to be of some significance to provide cues as to a users credibility, that is; their level of expertise in a geographical area, how useful their reviews are to other users and so on\cite{Lopez}.
-
-\chapter{Technology Review Breakdown}
+There were some other functional changes made: Primarily, the method of report export to Microsoft Excel-readable files was switched from CSV file export to .xlsx (the native excel file type). The reason for this was that this functionality was desired in the first iteration but wasn't implemented since the Excel writer in php was excessively slow, and CSV (which is a plain text format) was used as a compromise. In Java creating the .xslx files was facile and efficient so we opted for meeting the initial requirements of the application rather than a direct functionality replication.
+ 
+\chapter{Technology Review}
 
 \begin{itemize}	
 	\item Spring MVC and MVC	
 	\item Hibernate ORM and MySQL
-	\item HTML and CSS, Javascript/jQuery
+	\item HTML and CSS, JavaScript/jQuery
 	\item JSP Pages
+	\item Review Systems Literature
 \end{itemize}
 
 \section{Spring MVC and MVC}
@@ -200,9 +151,74 @@ Upon researching more we found alot of information about using annotations with 
 
 Creating the actual database from these classes had to be done manually. Hibernate does have the capacity to do this automatically based off the current classes but this lead to issues. The particular component was "hibernate.hbm2ddl.auto" this is called in the spring.xml file which serves as configuration file for server connection strings and to name the annotated or mapped classes. The reason this wasn't used was because it would force the generation of tables for classes we didn't use and forced the generation of tables for interfaces strangely. Some of these tables weren't needed so the tables that Hibernate generated for us were used as a guide more than anything. Using Hibernate we also found that Hibernate would look for those interface tables, this really complicated things, we only required a minimal amount of tables in the database. Due to this the decision was taken to ignore some of the composition with the POJO's and manage them manually. So in our case the class DefaultOrientationService held a set of Reviews in a ReviewSet. It was much cleaner to assign a review set id to a review and store the reviews individually that way. This solution removed the need for all these interval tables in the database. The idea was to keep our footprint on the database as light as possible. In the end we reduced the amount of tables needed in the database down too four relatively simple tables.
 
-\section{HTML and CSS, Javascript/jQuery}
+\section{HTML and CSS, JavaScript/jQuery}
 
-We didn't use much HTML and CSS because the sidebars and navigation bars around the content would later be updated to the style created by RoamPA's team. A simple Bootstrap was used as a template and was later removed. All the functionality of the map was achieved using Google Maps Places API. This was all done through JavaScript. Anything that needed to be done by the back-end was sent through to the proper MVC routes on the server controller by using JavaScriptt.
+We didn't use much HTML and CSS because the sidebars and navigation bars around the content would later be updated to the style created by RoamPA's team. A simple Bootstrap was used as a template and was later removed. All the functionality of the map was achieved using Google Maps Places API. This was all done through JavaScript. Anything that needed to be done by the back-end was sent through to the proper MVC routes on the server controller by using JavaScript.
+
+\section{Review Systems Literature}
+
+\subsection{Word of Mouth Model}
+In the context of the time span of computing, Word of Mouth (WOM) has long been shown to be efficacious and an important source of information when consumers wish to make purchasing decisions\cite{Nielsen}. The usage of Word of Mouth as a marketing tool dates back to, at least, the 1970s, after psychologist George Silverman created his 'Word of Mouth Model' after observing focus groups of physicians discussing pharmaceutical products~\cite{WOM}. Here he found that within a focus group the positive opinion of one physician could sway other members of the group who had previously been sceptical, and even the opinions of those whose patients had had negative experiences with a particular drug.
+
+With the rapid proliferation of digital services that allow consumers to review services online this model is now applied as an Electronic Word of Mouth (eWOM), in 2008 Nielsen Online found that 81\% of online shoppers read online reviews from other customers and 71\% agreed that these reviews made them more comfortable in purchasing the product, in comparison only 14\% sought out reviews from an established source~\cite{Nielsen}. In the case of tourism B. Brown of the University of Glasgow concluded that tourists will use online reviews as a way to "pre-visit" locations~\cite{Brown}.
+
+Many sites and web platforms supply the user with the ability review services or goods, however, the quality and quantity of these reviews vary greatly~\cite{Zhang}.
+
+\subsection{Existing Research}
+We know that in the field of traditional marketing, by 'Word of Mouth', that the perceived expertise of the reviewer correlates to how likely it is that the receiver will pay attention to the information on offer~\cite{Bansal}. Given that most reviews online are anonymous or tied to identities which the receiver of the review knows nothing about this perceived expertise must be attained in other ways:
+
+Lopez et al\cite{Lopez} performed research on the \emph{yelp.com} platform comparing the 'usefulness' rating of reviews to the traditional WOM model, and found that many of the 'cues' provided by the site to indicate a reviewers credibility or expertise strongly correlated to 'high usefulness' ratings for reviews, particularly in the case of 'local expertise' they found: 
+
+\emph{"Compared to a reviewer with only one review in the neighbourhood, the count of votes increases 14.3\% when the reviewer has more than five reviews in the neighbourhoodd."}
+
+In the case of Electronic Word of Mouth via online review systems we see that there are some differences in the model;
+
+The critical factor in this context is not necessarily the perceived expertise but the perceived credibility of the source, which can be hard to judge since frequently the source of an eWOM document is anonymous. The receiver of WOM information is more likely to find it credible if the source is known to them\cite{Bart}, however this is rarely the circumstance when we are dealing with online reviews and eWOMs, to offset this many eWOM aggregators apply ratings systems for the reviews themselves\cite{Krestel}, however this has it's own challenges and problems, namely that often a simple 'was this review helpful' binary option does not give a good measurement of how credible the source may be. Additionally we can see that new reviews or reviews on niche products are likely to have very few ratings as to their helpfulness\cite{Ghose}. 
+
+Zhang et al proposed a Probabilistic framework for ranking helpfulness of eWOMs, however there were problems when some eWOMs did not have enough user ratings~\cite{Zhang}. There is also some trouble with the self selective nature of the response to this kind of polling as outlined by Sipos et al\cite{Sipos} where they demonstrate that 
+
+\emph{". . . the observed connection between context and voting  behaviour  cannot  be  captured  by  a  cardinal  voting model (Section 3), where users make absolute and independent judgements about helpfulness."}
+
+i.e. the context in which a review is presented influences the polarity of the ratings that it receives.
+
+In their paper, Kim et al\cite{Kim} explored automatically rating reviews by helpfulness without manual user input using a Support Vector Machine regression algorithm relying on the wealth of existing eWOMs from other sites. 
+
+Ammar et al\cite{Ammar} of MIT propose a ranking system based on partial data by combining ordinal (comparison) data and first-order marginal (top preference) data, however this requires two forms of ranking to be carried out by the user, both making comparisons and ranking in order of preference.
+
+Another phenomena that one encounters in the context of Electronic Word of Mouth is 'spam', Lim et al\cite{Lim} define this to be:
+
+\emph{". . . all forms of malicious manipulation of user generated data so as to influence usage patterns of the data"}
+
+This definition would, in some cases, overlap with fraud, and spam need not be malicious in all situations, however, they refer to this as 'review spam' or 'opinion spam' in the context of online reviews, and characterise it as reviewers habitually leaving reviews rating services at a significant deviation from the mean rating for that service. They propose to implement aggregation of the reviewer to detect this behaviour and preserve the integrity of the review system. This approach also seems to suffer from removing the reviews of people who are simply more or less critical than average.
+
+Centeno et al\cite{Centeno} discuss online review system fraud, defining fraud as:
+
+\emph{"The fact of promoting bad entities, or damage the reputation of good entities"} 
+
+They propose a solution to this problem by replacing the standard rating system with a comparison system asking users:
+
+\emph{'Which review do you think users would find more helpful, A or B?'}.
+
+Dubey et al\cite{Dubey} state that due to the vast quantity of reviews on some services that users will only read a small sample of these which may not be representative, they propose a technique of summarising reviews by first clustering them by user rank (which has been outlined above) and then selecting the sections of those reviews which are similar to the others in their cluster. They do not consider this an opinion mining activity as there isn't semantic analysis taking place, merely similarity analysis. This approach has a drawback in that it \emph{". . . sacrifices the immediacy and narrative structure of reviews"}\cite{Lappas} according to Lappas et al of Boston University. 
+
+Jin et al\cite{Jin} recommend a true opinion mining algorithm which clusters reviews by ordinal rank (rank they give to the service) and then using the service characteristics as keywords to perform the opinion mining. The ordinal clustering allows for both detecting customers fulfilled and unfulfilled needs without need to resort to elaborate semantic analysis.
+
+Lappas et al\cite{Lappas} also state that ranking by 'usefulness' or 'importance' as we saw earlier \emph{"Leads to redundant or non-representative summaries"}, they propose a system which selects a subset of reviews in those cases where there are a number that it is infeasible for the user to scan through manually, and use a similar technique to that of Jin et al to select reviews that deal with key features of the service. Their aim is to maintain the statistical properties of the superset in their subset with regards to both ordinal distribution and feature discussion.
+
+Ghose et al\cite{Ghose} also propose an opinion mining approach but they tune their algorithm to maximise economic results, i.e. promoting the reviews which have the largest effect on sales. Here they propose to assign the review a Subjectivity/Objectivity score by using text mining to determine whether the review is factual, based on features of the service, or sentimental, based on a personal description of the service or experience with the service. They then analysed these subjectivity values against economic impact. The findings here were not conclusive, however they did find a correlation between reviews that combined objectivity and subjectivity with higher 'usefulness' scores from users.
+
+\subsection{Analysis}
+What becomes clear from the predominance of the literature is that this field of research is booming alongside the prevailing business model of service aggregation with many business being based on the disruptive business plan of 'man in the middle, service aggregator, platform' a la \emph{Uber}, \emph{AirBnB}, \emph{TripAdvisor} etc. All of these platforms feature user reviews prominently and the amount of raw user content being produced mandates aggregation of some sort. 
+
+As we have seen there are many competing approaches to this problem each with downsides, whether they be functional or in difficulty of implementation, or both. It is apparent that the approaches to solve the problem have continued to evolve as the commonality of the problem increases. The simplest approaches are allowing users to rate services and simply displaying those reviews in some order, from there reviews are reviewed by other users, reviewers build up aggregate scores to determine credible reviewers, and then there are the statistical approaches, and finally the sentiment mining and machine learning approaches.
+
+We also see from the Lim et al paper\cite{Lim} and the Centeno et al\cite{Centeno} paper that there are pitfalls that any review system must deal with beyond normal security, the system also has to deal with abnormal user behaviour to ensure integrity and value to other users.
+
+\subsection{Literature Conclusion}
+In conclusion, the literature seems to indicate that a review system must be designed with context in mind, some solutions are better suited to environments where there is an abundance of user data, in the form of reviews and rankings of those reviews, which need to be aggregated, while others are better suited to environments with a scarcity of reviews and rankings. In addition we see that some environments can lend to enhanced 'perceived expertise' (which translates to perceived credibility in an electronic context) from the traditional Word of Mouth model, in that an environment can, at least, 'confirm' that the reviewer is an actual customer (i.e. confirmed purchase on a retailer site). Other environments allow anyone to leave reviews in which makes the case for any given reviewers perceived credibility is harder to make. In the latter situation, the possibility of fraud and undesirable user behaviour (i.e. spamming) is of more concern, so the recommendations of \cite{Lim}Lim et al and \cite{Centeno}Centeno et al are more important.
+
+It also appears to be of some significance to provide cues as to a users credibility, that is; their level of expertise in a geographical area, how useful their reviews are to other users and so on\cite{Lopez}.
+
 
 \chapter{System Design}
 
