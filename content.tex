@@ -27,7 +27,7 @@ The main module we had to create was a reviews module. This again was restrained
 
 \section{Why we chose this project}
 
-Throughout our college course we have developed in many different languages. Java, C\#, C and Python to name a few. We have not had the chance to really to dig deeply into web development. Web languages like PHP and JavaScript were not part of our syllabus. Our sister course "Computing in Digital Media" does some of the design elements of web development but not much of the back-end stuff that we've both liked. Throughout our course we had a few semesters that had Database modules involving MYSQL. We heard the current project involved full blown MVC, Servlets, ORM and JSP pages. We also learned that the main language required for the project was Java which is one of the core languages for our college course. This project gave us a whole new area to experiment with and learn. The project would give us the opportunity to develop for a J2EE environment. Due to the challenge and interest we accepted the contract for nthis project.
+Throughout our college course we have developed in many different languages. Java, C\#, C and Python to name a few. We have not had the chance to really to dig deeply into web development. Web languages like PHP and JavaScript were not part of our syllabus. Our sister course "Computing in Digital Media" does some of the design elements of web development but not much of the back-end stuff that we've both liked. Throughout our course we had a few semesters that had Database modules involving MYSQL. We heard the current project involved full blown MVC, Servlets, ORM and JSP pages. We also learned that the main language required for the project was Java which is one of the core languages for our college course. This project gave us a whole new area to experiment with and learn. The project would give us the opportunity to develop for a J2EE environment. Due to the challenge and interest we accepted the contract for this project.
 
 \section{Challenges we had to face}    
 
@@ -49,9 +49,26 @@ We were creating two modules for RoamPA. Both modules had to be integrated onto 
 
 The first module involved creating a reviews system. The reviews system should allow the customer to look up an area using a search box and using filters then find locations for buildings like hospitals,restaurants and numerous other points of interest. The customer could then click on the Point of Interest (POI) and create a review for a business. They can also rate a current review that exists on there and like or dislike it.
 
-The second module \newline
+The specifications outlined are as follows:
 
-\textbf{JOHNS BIT ABOUT REPORT GENERATOR}
+\begin{itemize}
+	\item Create a reviews system that would display establishments on a map
+	\item Enable the user to create a review based on an existing establishment
+	\item Enable the user to like and dislike reviews
+	\item Enable the user to filter out different types of establishments
+	\item Take care to make the module integrable to the current Tomcat environment
+	\item Take care to use the existing database schema to generate queries
+\end{itemize}
+
+The second module was a reports system that would let an administrator generate queries about their employees. The reports system was aimed at administrators in roles like Human Resources. This system would enable them to build their own queries using a drag and drop interface.
+
+\begin{itemize}
+	\item Implement a drag and drop interface 
+	\item Make sure generated queries resolve properly when querying the database
+	\item Enable the creation of reports from the user queries in the following formats; PDF and Excel
+	\item Take care to make the module integrable to the current Tomcat environment
+	\item Take care to use the existing database schema to generate queries
+\end{itemize}
 
 
 \chapter{Methodology}
@@ -226,6 +243,43 @@ It also appears to be of some significance to provide cues as to a users credibi
 
 
 \chapter{System Design}
+
+The system consists of many elements and dependencies working together on a Tomcat Server. Developing this system required understanding the defacto standard for developing a Spring MVC application. Spring MVC dictated the of the structure of the application and because this is constraint of the environment the design and flow of data must follow Spring's architectural pattern.
+
+\section{MySQL}
+
+Starting from the bottom of the system design, we knew from our specifications that we would be using a MySQL database. Initially we had tested with mockup objects and then later with MySQLite but the release was to use MySQL. \newline 
+
+\noindent MySQL is a relational database that has been around for 20 years, it provides atomicity and is used widely in the industry. It made sense to use a relational database with the application because we are dealing with easily related data. An example of this is evident in our database e.g An orientation service has a review set which relates to views about an establishment. Furthermore these reviews has individual likes and dislikes on them. All of this data is closely related to each other and using a MySQL database made sense to use. Working with this database was also good because the connectors and database drivers between MySQL and Hibernate existed due to MySQL's popularity. \newline
+
+\noindent The database design is as follows:
+
+\begin{center}    
+	\includegraphics[height=15cm, width=15cm]{img/objectModel.png}
+\end{center}
+
+\section{Hibernate and SpringMVC}
+
+Hibernate is a framework that can work closely with SpringMVC to facilitate the transfer of information too and from the database. Hibernate deals with object relational mapping. In Hibernate's case, object relational mapping is the mapping of JAVA objects to databases and columns. Hibernate was key to making the application function. \newline 
+
+\noindent SpringMVC's configuration files holds the Hibernate connection strings. The standard in SpringMVC for implementing Hibernate is by creating interfaces and using DAO(Data Access Object) classes to do the saving, updating etc. The DAO pattern is used to separate low level data accessing the API or operations from high level business services. In other words It helped to separate out all of the database CRUD (Create,Read,Update and Delete) methods from each instead of having them in one big class. All of the access methods to the database worked through using DAO objects. This is all powered of course by ORM with either the previously mention .hbm files or usings JPA's annotations to inject the dependencies which proved a lot better to use in the long run.\newline
+
+\noindent SpringMVC was another specification that we had to follow. Spring MVC dealt with serving content to the user, it also dealt with submitting and gathering data from the database. Spring MVC's point of entry is set by using a controller which defines routes based of URL's and parameters passed too those URL's. This was much more different from using servlets and required a lot of code was added and re-written to convert the servlet code over to get it working in MVC format. \newline
+
+\noindent The flow of data is as follows:
+
+\begin{itemize}
+	\item A user makes a request to the Tomcat server through a URL on the host domain and a request is made to the Spring Controller
+	\item If the proper URL or route exists, with the correct parameters the following happens
+	\item The controller picks up on the route and displays the appropriate view to the user
+	\item If this view has to load anything from the database this is done through Hibernate ORM using DAO's
+	\item All of the data is compiled together and presented back to the user in a view on a JSP page
+	\item JSP pages can use forms and AJAX or on window.load events to prompt loading/navigating to other views
+\end{itemize}
+
+\begin{center}    
+	\includegraphics[height=17cm, width=20cm]{img/architecture.png}
+\end{center}
 
 
 \chapter{System Evaluation}
