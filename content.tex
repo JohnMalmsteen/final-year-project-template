@@ -236,7 +236,7 @@ Starting from the bottom of the system design, we knew from our specifications t
 
 \noindent MySQL is a relational database that has been around for 20 years, it provides atomicity and is used widely in the industry. It made sense to use a relational database with the application because we are dealing with easily related data. An example of this is evident in our database e.g An orientation service has a review set which relates to views about an establishment. Furthermore these reviews has individual likes and dislikes on them. All of this data is closely related to each other and using a MySQL database made sense to use. Working with this database was also good because the connectors and database drivers between MySQL and Hibernate existed due to MySQL's popularity. \newline
 
-\noindent The database design is as follows:
+\noindent The object model which must be stored in the database design is as follows, our primary tables are OrientationService and Review, and there are subsequent tables for 'thumb up' and `thumb down' as the reviews which each user has interacted must be tracked:
 
 \begin{center}    
 	\includegraphics[height=15cm, width=15cm]{img/objectModel.png}
@@ -308,7 +308,7 @@ Functional acceptance tests for the report systems were as follows:
 
 Performance testing is dealt with by the application server. All of the traffic and load balancing isn't managed by us. The modules operations work with basic CRUD operations in the server through SpringMVC so the speed of these operations are reliant on how RoamPA configure their server and the hardware they use. \newline \newline 
 
-\noindent Here is screenshots of some of the tests we ran
+\noindent Here are some screen shots of a selection of the tests we ran
 
 \begin{center}    
 	\includegraphics[height=10cm, width=13cm]{img/seleniumtest.png}
@@ -323,9 +323,28 @@ Performance testing is dealt with by the application server. All of the traffic 
 \end{center}
 
 \chapter{Conclusion}
-About three pages.
+Our objectives were to create a system allowing users to find and review services in a given area, and for companies to supply company level reviews of local services that would be of use to their international / travelling employees.\\\\
+We were also to update legacy code for the reports writer which provides non-technical user access to a MySQL database, allowing the user to transparently generate reports that map to custom queries of the database.\\\\
+We successfully provided the required functionality from the Orientation module and functionality was maintained (and slightly improved with regards to the Excel output option) for the Reports option.\\\\
+Our Integration and User Acceptance testing is still ongoing with RoamPA as this is being done on their schedule rather than on the project submission schedule.\\\\
+We found that much of the functionality that was required was provided via the Google Places API, but the core business value in the project was the review system and the inherent added credibility that reviews such as these from peers provides as outlined in the Review System Literature Review section of the Technology review.\\\\
+It was a great experience to work with enterprise technologies in a multi-national, distributed team, although we did encounter some of the typical software development issues such as requirements alterations and environment changes mid project (switching to Spring from traditional Tomcat + javax servlets and a late schema change for the database on the reports writer module) \\\\
+The project was a great learning experience, exposing us to many technologies and development methodologies.
 
-\begin{itemize}
-\item Briefly summarize your context and objectives (a few lines).
-\item Highlight your findings from the evaluation section / chapter and any opportunities identified.
-\end{itemize}
+\chapter{Appendices}
+\section{Source Code}
+Our source code repositories are set to private since it is an industry project but we have added Dr John Healy's account 'BradanFeasa' as a collaborator to all of them:
+
+\subsection{Reports Module}
+https://github.com/JohnMalmsteen/roampa-reports
+
+\subsection{Orientation Module}
+Spring Conversion (most recent version):\\
+https://github.com/AndyDev2013/roampa\_mvc\_spring \\\\ 
+Original Tomcat + Servlets version:\\
+https://github.com/JohnMalmsteen/roampaorientation 
+
+\section{Installation Instructions}
+Installation instructions are contained in the ReadMe files on the github repositories.
+
+
