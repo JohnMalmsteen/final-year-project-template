@@ -262,13 +262,52 @@ Hibernate is a framework that can work closely with SpringMVC to facilitate the 
 \end{itemize}
 
 \begin{center}    
-	\includegraphics[height=17cm, width=20cm]{img/architecture.png}
+	\includegraphics[height=15cm, width=13cm]{img/architecture.png}
 \end{center}
 
->>>>>>> 24b0607e339b19c4d6bfdc138ec869e038c67765
-
 \chapter{System Evaluation}
-As many pages as needed.
+
+\section{Integration Testing}
+
+We are currently working closely with RoamPA's developers on the integration testing. We work with their specifications but the final development is done by their developers. Integration testing would include testing the reliability of the modules inside of RoamPA's environment. RoamPA's team would push a version of our module on to their server and from our side we would test the module remotely. If something was working locally but not remotely we'd work together to fix the issue. Furthermore this testing helped us see how things worked on a live production server.
+
+\section{Functional Testing}
+
+Functional testing was done throughout the project. We always would work from the current project specifications. We had different acceptance tests for each of the modules as both were individual from each other in user experience. \newline \newline \noindent Functional testing was done using both Selenium and using JUNIT tests to verify the validity of the functions given. Selenium is used to automate browser tests and was quite effective and quick to use while JUNIT let us test JAVA server code. 
+
+\subsection{Reviews System Functional Testing}
+
+Functional acceptance tests for the reviews systems were as follows:
+
+\begin{itemize}
+	\item User can navigate to the page
+	\item User can filter area requests
+	\item User can search an area for establishments
+	\item User can click on any establishment on the map
+	\item User can search for an establishment by name
+	\item User can retrieve reviews about an establishment upon clicking
+	\item User can submit a review
+	\item User can like current reviews
+	\item User can dislike current reviews
+	\item User can navigate around the map
+\end{itemize}
+
+\subsection{Reports System Functional Testing}
+
+Functional acceptance tests for the report systems were as follows:
+
+\begin{itemize}
+	\item User can navigate to the page
+	\item User can create queries using drag and drop HTML elements
+	\item User can submit a query and then be brought to a HTML page with a report and supply the user with a downloadable PDF document
+	\item User can submit a query and then be brought to a HTML page with a report and and supply the user with a downloadable EXCEL document
+	\item User can fill out the inputs for the where clause
+\end{itemize}
+
+\section{Performance Testing}
+
+Performance testing is dealt with by the application server. All of the traffic and load balancing isn't managed by us. The modules operations work with basic CRUD operations in the server through SpringMVC so the speed of these operations are reliant on how RoamPA configure their server and the hardware they use.
+
 \begin{itemize}
 \item Prove that your software is robust. How? Testing etc. 
 \item Use performance benchmarks (space and time) if algorithmic.
@@ -280,27 +319,6 @@ As many pages as needed.
 About three pages.
 
 \begin{itemize}
-\item Briefly summarise your context and objectives (a few lines).
+\item Briefly summarize your context and objectives (a few lines).
 \item Highlight your findings from the evaluation section / chapter and any opportunities identified.
 \end{itemize}
-
-
-
-%= - 1 Apache Tomcat ~ http://tomcat.apache.org/ 
-%= - 2 Hibernate ORM~ http://hibernate.org/
-%= - 3 Spring MVC ~ https://spring.io/
-%= - 4 JSP Pages ~ https://docs.oracle.com/javaee/5/tutorial/doc/bnagy.html
-%= - 5 ModelViewController Explained ~ http://blog.codinghorror.com/understanding-model-view-controller/ 
-%= - 6 SpringMVC ~ http://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm
-%= - 7 Hibernate Example ~ http://www.tutorialspoint.com/hibernate/hibernate_mapping_files.htm
-%=  http://puu.sh/og17d/1dde409ae4.png
-%= - 8 Hibernate Annotations ~ http://www.tutorialspoint.com/hibernate/hibernate_annotations.htm
-%= - 9 Hibernate Configuration ~ http://www.tutorialspoint.com/hibernate/hibernate_configuration.htm
-%= - 10 OpenStreetMap ~ http://wiki.openstreetmap.org/wiki/API
-%= - 11 Leaflet ~ http://leafletjs.com/
-%= - 12 Bing Maps ~ https://www.microsoft.com/maps/choose-your-bing-maps-API.aspx
-%= - 13 Example Google Places ~ https://developers.google.com/places/javascript/
-%= - 14 Hibernate JPA Annotations ~ https://docs.jboss.org/hibernate/stable/annotations/reference/en/html_single/
-%= - API definition https://en.wikipedia.org/wiki/Application_programming_interface
-%= - IDE definition http://searchsoftwarequality.techtarget.com/definition/integrated-development-environment
-%= - Eclipse https://eclipse.org/
