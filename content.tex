@@ -128,22 +128,6 @@ Model View Controller is a design pattern which consists of a Model, a View and 
    	\includegraphics[height=6cm, width=9cm]{img/mvc.png}
 \end{center}
 
-SpringMVC has it's own slightly altered version of this. It works off the same principals just with a more in depth controller.
-
-\begin{center}    
-	\includegraphics[height=6cm, width=10cm]{img/springmvc.png}
-\end{center}
-
-\noindent After receiving an HTTP request, DispatcherServlet\cite{Dispatcher} consults the HandlerMapping\cite{HandlerMapping} to call the appropriate Controller. \newline
-
-\noindent The Controller takes the request and calls the appropriate service methods based on used GET or POST method. The service method will set model data based on defined business logic and returns view name to the DispatcherServlet. \newline
-
-\noindent The DispatcherServlet will take help from ViewResolver to pick up the defined view for the request. \newline 
-
-\noindent Once the view is finalized, The DispatcherServlet passes the model data to the view which is finally rendered on the browser. \newline
-
-\noindent It was very important to the project to understand this MVC concept.
-
 \section{Hibernate ORM}
 
 Hibernate ORM\cite{Hibernate} is referred usually too as Hibernate for short. Hibernate is an Object Relational Mapping framework which is what ORM stands for. ORM is a technique for mapping objects, in our case, mapping instances of Java classes and relating them to tables and columns in our chosen database. There instances of Java classes are known as POJO's or plain ordinary Java objects. Mapping of the objects to columns and tables in Hibernate is done through XML\cite{HibernateXML}\cite{XML} files or more recently through annotations\cite{HibernateAnnotations}. Hibernate XML files can be generated through Eclipse but if column names differ from field names you will find yourself spending a lot of time manually editing these files. This leads a lot of margin for error and leads to a lot of overhead. E.g Manually assigning primary keys, fields and making sure relations are properly defined. 
@@ -281,6 +265,7 @@ Hibernate is a framework that can work closely with SpringMVC to facilitate the 
 	\includegraphics[height=17cm, width=20cm]{img/architecture.png}
 \end{center}
 
+>>>>>>> 24b0607e339b19c4d6bfdc138ec869e038c67765
 
 \chapter{System Evaluation}
 As many pages as needed.
